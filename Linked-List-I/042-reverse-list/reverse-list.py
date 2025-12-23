@@ -3,14 +3,28 @@
 #     self.val = val
 #     self.next = None
 
-def reverse_list(head):
-  current = head
-  prev = None
+# ------------- Iterative -----------------------------------
 
-  while current is not None:
-    next = current.next
-    current.next = prev
-    prev = current
-    current = next
+# def reverse_list(head):
+#   current = head
+#   prev = None
 
-  return prev
+#   while current is not None:
+#     next = current.next
+#     current.next = prev
+#     prev = current
+#     current = next
+
+#   return prev
+
+# ----------------------------------------------------------
+
+# ----------------------Recursive--------------------------- 
+
+def reverse_list(head, prev = None):
+  if head is None:
+    return prev
+  next = head.next
+  head.next = prev
+
+  return reverse_list(next, head)
