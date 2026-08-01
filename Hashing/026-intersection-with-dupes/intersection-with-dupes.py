@@ -4,7 +4,7 @@ def intersection_with_dupes(a, b):
   dic2 = Counter(b)
   result = []
 
-  for char in a:
+  for char in dic1:
     if char in dic2:
       count = min(dic1[char], dic2[char])
       result.extend([char]*count)
