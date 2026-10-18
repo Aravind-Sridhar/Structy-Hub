@@ -1,12 +1,8 @@
 from collections import Counter
 def intersection_with_dupes(a, b):
-  dic1 = Counter(a)
-  dic2 = Counter(b)
-  result = []
+  dic_a = Counter(a)
+  dic_b = Counter(b)
 
-  for char in dic1:
-    if char in dic2:
-      count = min(dic1[char], dic2[char])
-      result.extend([char]*count)
-
-  return result
+  for key in dic_a:
+    for i in range(0, min(dic_a[key], dic_b[key])):
+      
