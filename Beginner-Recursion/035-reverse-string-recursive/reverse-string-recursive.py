@@ -1,2 +1,4 @@
 def reverse_string(s):
-  pass # todo
+  if not s:
+    return ''
+  return s[-1] + reverse_string(s[-2:])
