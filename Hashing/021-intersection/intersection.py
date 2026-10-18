@@ -1,10 +1,13 @@
+from collections import Counter
 def intersection(a, b):
-  s1 = set(a)
-  s2 = set(b)
-  result = []
+  res = []
 
-  for num in s1:
-    if num in s2:
-      result.append(num)
+  dic_a = Counter(a)
+  dic_b = Counter(b)
 
-  return result
+  for x in dic_a:
+    if x in Counter(b):
+      res.append(x)
+
+  return res
+  
