@@ -9,8 +9,8 @@ def leaf_list(root):
     return []
 
   if root.left is None and root.right is None:
-    return root.val
-  left_vals, right_vals = [],[]
+    return [root.val]
+    
   left_vals = leaf_list(root.left)
   right_vals = leaf_list(root.right)
 
